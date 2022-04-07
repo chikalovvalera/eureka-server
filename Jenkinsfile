@@ -6,6 +6,7 @@ pipeline {
     stage('build container eureka server') {
       steps {
        echo 'run' 
+       echo 'mvn clean package'
       }
     }
   }
