@@ -8,7 +8,7 @@ pipeline {
     stage('build eureka server') {
       steps {
        echo 'mvn --version' 
-       echo 'mvn clean install'
+       sh "mvn clean install"
       }
     }
   }
