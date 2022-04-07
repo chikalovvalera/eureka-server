@@ -1,8 +1,8 @@
 pipeline {
   agent { dockerfile true }
   tools {
-    maven 'Maven-3.8.5'
-    jdk 'Java-11'
+    maven 'Maven'
+    jdk 'Java'
   }
   stages {
     stage('build eureka server') {
