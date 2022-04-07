@@ -4,7 +4,7 @@ pipeline {
   }
   stages {
     stage('build container eureka server') {
-      step {
+      steps {
        echo 'run' 
       }
     }
