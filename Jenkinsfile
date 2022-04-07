@@ -3,10 +3,11 @@ pipeline {
     dockerfile true
   }
   stages {
-    stage('build container eureka server') {
+    stage('build eureka server') {
       steps {
-       echo 'run' 
-       echo 'mvn clean package'
+       git 'https://github.com/chikalovvalera/eureka-server.git'
+       echo 'mvn --version' 
+       echo 'mvn clean install'
       }
     }
   }
