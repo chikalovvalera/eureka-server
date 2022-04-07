@@ -15,8 +15,8 @@ pipeline {
     }
     stage('Build') {
       steps {
-        dir("/home/jenkins_home/workspace/eureka-server-jenkins-docker2") {
-          sh 'mvn clean install'
+        script {
+          sh 'mvn install:install'
         }
       }
     }
