@@ -7,7 +7,7 @@ pipeline {
       steps {
        git 'https://github.com/chikalovvalera/eureka-server.git'
        echo 'mvn --version' 
-       echo 'mvn clean install'
+       echo 'mvn clean package'
       }
     }
   }
