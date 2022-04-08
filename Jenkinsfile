@@ -11,7 +11,7 @@ pipeline {
     stage('Deploy') {
         steps {
             sh "echo 1"
-            sh "echo ${IMAGE_ID}"
+            sh "echo ${image.id}"
             sh "echo ${IMAGE_NAME}"
             sh "echo 2"
             sh "docker stop ${IMAGE_ID} || true && docker rm ${IMAGE_ID} || true"
