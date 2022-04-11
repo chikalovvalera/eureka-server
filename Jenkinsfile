@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Run') {
         steps {
-            sh "docker run -d -p 8761:8761 --name eureka-server"
+            sh "docker run -d -p 8761:8761 eureka-server"
         }
     }
   }
