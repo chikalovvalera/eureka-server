@@ -12,7 +12,8 @@ pipeline {
         steps {
             sh "echo 1"
             sh "echo ${image.id}"
-            sh "echo ${IMAGE_NAME}"
+            sh "echo $BUILD_NUMBER"
+            sh "echo ${BUILD_NUMBER}"
             sh "echo 2"
             sh "docker stop ${IMAGE_ID} || true && docker rm ${IMAGE_ID} || true"
             sh "docker run -d \
