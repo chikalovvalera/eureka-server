@@ -1,6 +1,5 @@
-FROM adoptopenjdk/maven-openjdk11:latest
-WORKDIR /app
-COPY . /app
-RUN mvn package
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+COPY target/*war eureka-server.war
 EXPOSE 8761
-CMD ["mvn", "spring-boot:run"]
+CMD ["java", "-jar", "/eureka-server.war"]
