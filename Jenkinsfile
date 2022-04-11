@@ -1,5 +1,5 @@
 pipeline {
-  agent { dockerfile true }
+  agent any
   tools {
     maven 'Maven'
     jdk 'Java'
@@ -9,10 +9,14 @@ pipeline {
     string (name:'containerTag', defaultValue: "latest", description: '')
   }
   stages {
-    stage('Deploy') {
+    stage('Build') {
         steps {
-            sh "docker build -t ${params.containerName}:${params.containerTag}  -t ${params.containerName} --no-cache ."
-            sh "docker run -d --rm -p 8761:8761 --name ${params.containerName}"
+            sh "docker build -t eureka-server-v2"
+        }
+    }
+    stage('Run') {
+        steps {
+            sh "docker run -it --rm -p 8761:8761 --name eureka-server-v2"
         }
     }
   }
