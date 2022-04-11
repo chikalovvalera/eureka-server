@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build') {
         steps {
-            sh "docker build -t eureka-server-v2"
+            sh "docker build -t eureka-server-v2 ."
         }
     }
     stage('Run') {
