@@ -4,9 +4,6 @@ pipeline {
     maven 'Maven'
     jdk 'Java'
   }
-  parameters {
-    string(name: 'IMAGE_NAME', defaultValue: 'eureka-server')
-  }
   stages {
     stage('Deploy') {
         steps {
