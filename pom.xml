@@ -5,7 +5,7 @@
   <groupId>ru.chikalov</groupId>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>eureka-server</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>1.0</version>
 
   <name>eureka-server Maven Webapp</name>
@@ -78,7 +78,7 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
+          <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
         </plugin>
         <plugin>
