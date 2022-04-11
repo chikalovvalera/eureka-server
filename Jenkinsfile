@@ -11,7 +11,6 @@ pipeline {
     stage('Deploy') {
         steps {
             sh "echo 1"
-            sh "echo ${image.id}"
             sh "echo $BUILD_NUMBER"
             sh "echo ${BUILD_NUMBER}"
             sh "echo 2"
