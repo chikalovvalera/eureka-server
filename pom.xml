@@ -100,7 +100,7 @@
             <execution>
               <goals>
                   <goal>repackage</goal>
-              <goals>
+              </goals>
             </execution>
           </executions>
         </plugin>
