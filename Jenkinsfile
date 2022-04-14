@@ -10,17 +10,6 @@ pipeline {
             sh "mvn package spring-boot:repackage"
         }
     }
-    stage('Clean image'){
-        steps {
-            scpipt {
-              try {
-                  sh "docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))"
-              } catch (Exception err) {
-                  echo err.getMessage("Error clean docker image")
-              }
-            }
-        }
-    }
     stage('Build') {
         steps {
             sh "docker build -t eureka-server ."
