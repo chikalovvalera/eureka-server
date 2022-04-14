@@ -11,12 +11,13 @@ pipeline {
         }
     }
     stage('Clean') {
-        steps {
-            script {
-                try {
+        script {
+            try {
+                steps {
                     sh "docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))"
-                } catch(Exception) {
                 }
+            } catch(Exception) {
+            
             }
         }
     }
