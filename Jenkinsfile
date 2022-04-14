@@ -12,7 +12,13 @@ pipeline {
     }
     stage('Clean image'){
         steps {
-            sh "docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))"
+            scpipt {
+              try {
+                  sh "docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))"
+              } catch (err) {
+                  echo err.getMessage("Error clean docker image")
+              }
+            }
         }
     }
     stage('Build') {
