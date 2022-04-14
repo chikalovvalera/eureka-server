@@ -15,7 +15,7 @@ pipeline {
             scpipt {
               try {
                   sh "docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))"
-              } catch (err) {
+              } catch (Exception err) {
                   echo err.getMessage("Error clean docker image")
               }
             }
