@@ -18,7 +18,9 @@ pipeline {
                     docker rm $(docker stop $(docker ps -a -q --filter ancestor=eureka-server --format="{{.ID}}"))
                   '''
                 } catch (Exception e) {
-                  
+                  sh '''
+                  echo error docker rm stop container
+                  '''                  
                 }
             }
         }
