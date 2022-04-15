@@ -19,7 +19,7 @@ pipeline {
                   '''
                 } catch (Exception e) {
                   sh '''
-                  echo error docker rm stop container
+                  echo error docker rm stop container...
                   '''                  
                 }
             }
